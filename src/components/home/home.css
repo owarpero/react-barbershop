@@ -1,0 +1,98 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 32px;
+  background-repeat: no-repeat;
+  background-image: url(./logo.png);
+  padding: 20;
+  margin-left: 20px;
+  max-width: 180px;
+  width: 100%;
+  height: 100px;
+}
+
+.logo2 {
+  height: 32px;
+  background-repeat: no-repeat;
+  background-image: url(./logo2.png);
+  padding: 20;
+  margin-left: 20px;
+  margin-top: 15px;
+  max-width: 180px;
+  width: 100%;
+  height: 100px;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.site-layout-background {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.top_cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.record_person_card {
+
+  width: 50%;
+  padding-bottom: 20px;
+
+}
+
+@media screen and (max-width: 1560px) {
+  .record_person_card {
+    width: 100%;
+  }
+}
+
+
+
+.header_profile {
+  color: rgba(19, 156, 38, 0.904);
+  color: rgb(184, 179, 179);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 15px;
+}
+
+.slider {
+  min-height: 20vh;
+}
+
+.text {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.ant-layout-heade {
+  line-height: 0;
+}

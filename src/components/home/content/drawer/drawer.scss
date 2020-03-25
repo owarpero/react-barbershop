@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+$dark: #969696;
+$facebook: #365899;
+$twitter: #1da1f2;
+
+$instagram: #c32aa3;
+$googlePlus: #db4437;
+
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 400px;
+    line-height: 160px;
+    background: #364d79;
+}
+
+.ant-carousel .slick-slide h3 {
+    color: #fff;
+}
+
+.drawer {
+    display: flex;
+    justify-content: space-between;
+}
+
+@function Shadow($color, $number) {
+    $value: "0px 0px 0px #{$color}";
+
+    @for $i from 1 through $number {
+        $value: "#{$value},0px #{$i}px 2px "+darken($color, $i * 5);
+    }
+
+    @return unquote($value);
+}
+
+body {
+
+    font-family: "Raleway", sans-serif;
+}
+
+.socialIcons {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: inline-block;
+    //   position: fixed;
+    //   top: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   right: 0;
+    //   margin: auto;
+    height: 70px;
+    text-align: center;
+
+    li {
+        display: inline-block;
+        margin: auto 10px;
+
+        a {
+            text-align: center;
+            display: inline-block;
+            font-size: 2rem;
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            color: $dark;
+            transition: all ease 0.5s;
+            text-shadow: 0px 0px 1px rgba(0, 0, 0, 1), 0px 0px 1px rgba(0, 0, 0, 1);
+            transform: rotateX(-30deg);
+
+            &:hover {
+                transform: rotateX(-30deg) translateY(-20px);
+
+                &.facebook {
+                    color: $facebook;
+                    text-shadow: Shadow($facebook, 10);
+                }
+
+                &.twitter {
+                    color: $twitter;
+                    text-shadow: Shadow($twitter, 10);
+                }
+
+                &.instagram {
+                    color: $instagram;
+                    text-shadow: Shadow($instagram, 10);
+                }
+
+                &.googlePlus {
+                    color: $googlePlus;
+                    text-shadow: Shadow($googlePlus, 10);
+                }
+            }
+        }
+    }
+}
+
+.otherPens {
+    position: absolute;
+    color: #212121;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.site-description-item-profile-wrapper {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.site-description-item-profile-p {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+[data-theme="dark"] .site-description-item-profile-p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="dark"] .site-description-item-profile-wrapper {
+    color: rgba(255, 255, 255, 0.65);
+}

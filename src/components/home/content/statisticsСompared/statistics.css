@@ -1,0 +1,27 @@
+.site-card-wrapper {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    margin-top: 30px;
+    width: 100%;
+
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4.5vh;
+    padding-top: 4.5vh;
+
+
+}
+
+@media screen and (max-width: 1150px) {
+    .total {
+        display: block;
+    }
+}
+
+.recordBar {
+    width: 100%;
+}
