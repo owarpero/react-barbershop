@@ -126,7 +126,7 @@ class CustomerTracking extends React.Component {
   handleSave = row => {
     const { date, trackingData } = this.props;
     const newData = [...trackingData];
-
+    let user = firebase.auth().currentUser;
     const index = newData.findIndex(item => row.key === item.key);
     const item = newData[index];
     item.price = `${row.price}`;
@@ -135,19 +135,14 @@ class CustomerTracking extends React.Component {
     newData.splice(index, 1, { ...item, ...row });
     console.log(date);
     let updates = {};
-    let weekUpdates = {};
+
     updates[`tracking/${date.yearAndMonth}/${date.day}/${item.key}`] =
       newData[index];
-    weekUpdates[`weekTracking/${date[2]}/${date.day}/${item.key}`] =
-      newData[index];
+    updates[`weekTracking/${date[2]}/${date.day}/${item.key}`] = newData[index];
     firebase
       .database()
       .ref()
       .update(updates);
-    firebase
-      .database()
-      .ref()
-      .update(weekUpdates);
   };
   changeListen = () => {
     const { date, dispatch } = this.props;

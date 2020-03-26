@@ -14,7 +14,7 @@ export class ChildDrawerContent extends React.Component {
       {
         required: false
       },
-      ({ getFieldValue }) => ({
+      () => ({
         validator(rule, value) {
           const validURL = str => {
             let pattern = new RegExp(

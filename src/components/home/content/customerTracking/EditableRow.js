@@ -71,8 +71,7 @@ export const EditableCell = ({
   if (title === "Barber") {
     childNode = (
       <div>
-        <Avatar src={record.avatar} />{" "}
-        <Button type="link">{record.nickname}</Button>
+        <Avatar src={record.avatar} /> <Text>{record.nickname}</Text>
       </div>
     );
   } else if (title === "price") {
