@@ -4,7 +4,7 @@ import "firebase/database";
 import { Chart } from "chart.js";
 import { connect } from "react-redux";
 import nanoid from "nanoid";
-import { cardLoading } from "../../../../store/home/statisticsCompared/actions";
+
 import { countRecords } from "./counters";
 
 function SalesBarChart(props) {

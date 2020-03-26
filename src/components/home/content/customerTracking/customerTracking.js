@@ -126,7 +126,7 @@ class CustomerTracking extends React.Component {
   handleSave = row => {
     const { date, trackingData } = this.props;
     const newData = [...trackingData];
-    let user = firebase.auth().currentUser;
+
     const index = newData.findIndex(item => row.key === item.key);
     const item = newData[index];
     item.price = `${row.price}`;

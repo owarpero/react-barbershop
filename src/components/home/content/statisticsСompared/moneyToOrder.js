@@ -11,8 +11,6 @@ import { cardLoading } from "../../../../store/home/statisticsCompared/actions";
 function SalesBarChart(props) {
   let [dataset, setDataset] = useState([]);
   let labels = [];
-  let { twoWeeks } = props;
-  let { dispatch } = props;
 
   for (let index = 1; index < 5; index += 1) {
     labels.push(`week`);

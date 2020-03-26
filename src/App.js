@@ -24,15 +24,18 @@ class App extends React.Component {
       });
   }
   render() {
+    const user = firebase.auth().currentUser;
     // let isLoggedIn = localStorage.getItem("currentUser") !== null;
     // isLoggedIn = isLoggedIn || this.props.state.LoginReducer.loginData;
     return (
       <Switch>
-        <Route path="/login" component={LoginPage} />
+        {user !== null ? (
+          <Route path="/home" component={HomePage} />
+        ) : (
+          <Route path="/login" component={LoginPage} />
+        )}
 
         <Route path="/registration" component={RegistationPage} />
-
-        <Route path="/home" component={HomePage} />
       </Switch>
     );
   }

@@ -2,7 +2,7 @@ import React, { useRef, useState, useContext, useEffect } from "react";
 
 import "antd/dist/antd.css";
 
-import { Form, Input, Select, message, Avatar, Button } from "antd";
+import { Form, Input, Select, message, Avatar } from "antd";
 
 import nanoid from "nanoid";
 import { Typography } from "antd";

@@ -16,9 +16,7 @@ import "./home.css";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined
+  UserOutlined
 } from "@ant-design/icons";
 
 import {

@@ -4,10 +4,9 @@ import "antd/dist/antd.css";
 import "./drawer.scss";
 import "firebase/auth";
 import firebase from "firebase/app";
-import { Typography, Button } from "antd";
-import { Drawer, List, Avatar, Divider, Col, Row } from "antd";
+import { Button } from "antd";
+import { Drawer, Divider, Col, Row } from "antd";
 import { ChildDrawerContent } from "./childDrawerContent";
-const { Title } = Typography;
 
 const DescriptionItem = ({ title, content }) => (
   <div
@@ -71,7 +70,7 @@ export default class DrawerContent extends React.Component {
       instagram,
       twitter
     } = this.state;
-    const avatar = JSON.parse(localStorage.getItem("currentUser")).photoURL;
+
     return (
       <div>
         <p

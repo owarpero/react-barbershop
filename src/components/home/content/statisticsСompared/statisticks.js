@@ -1,11 +1,11 @@
 import React from "react";
-import { Statistic, Row, Col } from "antd";
+import { Statistic } from "antd";
 import { ArrowUpOutlined } from "@ant-design/icons";
 import firebase from "firebase/app";
 import "firebase/database";
 import { connect } from "react-redux";
 import "./statistics.css";
-import { countPrices, moneyCounter, recordsCounter } from "./counters";
+import { moneyCounter, recordsCounter } from "./counters";
 class StatisticWidgets extends React.Component {
   constructor(props) {
     super(props);
