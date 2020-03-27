@@ -6,7 +6,7 @@ import "firebase/auth";
 import firebase from "firebase/app";
 import { Button } from "antd";
 import { Drawer, Divider, Col, Row } from "antd";
-import { ChildDrawerContent } from "./childDrawerContent";
+import ChildDrawerContent from "./childDrawerContent";
 
 const DescriptionItem = ({ title, content }) => (
   <div
@@ -136,7 +136,7 @@ export default class DrawerContent extends React.Component {
                     </a>
                   </li>
                   <li>
-                    <a href={google} blank className="googlePlus">
+                    <a href={google} className="googlePlus">
                       <i className="fa fa-google-plus"></i>
                     </a>
                   </li>

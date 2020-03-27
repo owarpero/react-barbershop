@@ -56,6 +56,7 @@ export const prevCurrentWeeks = dateProp => {
   }
 
   let twoWeeks = [[], []];
+
   let startTimeOfCurrentYear = new Date(date.getFullYear(), 0, 1).getTime();
   let currentTime;
   if (date.getDay() < 4 && date.getDay() !== 0) {
@@ -81,7 +82,7 @@ export const prevCurrentWeeks = dateProp => {
   let pastTimeOfStartCurrentYear = currentTime - startTimeOfCurrentYear;
   twoWeeks.push(Math.ceil(pastTimeOfStartCurrentYear / 3600000 / 168));
   let daysInMonth;
-  console.log(date.getMonth());
+
   if (date.getMonth() === 1) {
     daysInMonth = 29;
   } else if (parseInt(date.getMonth()) % 2 !== 0 && date.getMonth() !== 1) {
@@ -134,6 +135,7 @@ export const prevCurrentWeeks = dateProp => {
           yearAndMonth: `${dataFor.getFullYear()}-${dataFor.getMonth()}`
         });
   }
+  twoWeeks.push(dateValidator(date));
   if (dateProp === undefined) {
     return {
       type: CURRENT_TWO_WEEKS,

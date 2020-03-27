@@ -14,7 +14,6 @@ function SalesBarChart(props) {
   let { dispatch } = props;
 
   for (let index = 0; index < 7; index++) {
-    console.log();
     labels.push(`${twoWeeks[0][index].yearAndMonth}-${twoWeeks[0][index].day}`);
     labels.push(`${twoWeeks[1][index].yearAndMonth}-${twoWeeks[1][index].day}`);
   }

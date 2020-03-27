@@ -76,8 +76,6 @@ class CustomerTracking extends React.Component {
         let snapshotValue = snapshot.val();
         for (const key in snapshotValue) {
           if (value.value === key) {
-            console.log(snapshotValue[key]);
-            console.log({ ...value, price: snapshotValue[key] });
             this.handleSave({ ...value, price: snapshotValue[key] });
           }
         }
@@ -133,7 +131,7 @@ class CustomerTracking extends React.Component {
     item.value = row.value;
 
     newData.splice(index, 1, { ...item, ...row });
-    console.log(date);
+
     let updates = {};
 
     updates[`tracking/${date.yearAndMonth}/${date.day}/${item.key}`] =

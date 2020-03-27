@@ -43,14 +43,13 @@ function EarningsBarChart(props) {
           if (prevSnapshot.val() !== null) {
             data.push(countPrices(prevSnapshot, 0, twoWeeks));
           }
-          console.log(data);
 
           setDataset(data);
         });
       });
   }, [props]);
   const ref = useRef();
-  console.log(dataset[0]);
+
   const data = {
     labels,
     datasets: [

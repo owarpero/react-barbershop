@@ -14,7 +14,6 @@ class StatisticWidgets extends React.Component {
       dataRecord: [],
       complitedOrders: []
     };
-    console.log(props);
   }
   componentDidMount() {
     const { trackingDate } = this.props;
@@ -22,7 +21,6 @@ class StatisticWidgets extends React.Component {
       .database()
       .ref(`tracking/${trackingDate.yearAndMonth}`)
       .on("value", snapshot => {
-        console.log(snapshot.val());
         let date = [];
 
         if (snapshot.val() !== null)

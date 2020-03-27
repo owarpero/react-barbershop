@@ -16,7 +16,7 @@ function SalesBarChart(props) {
     labels.push(`week`);
     labels.push(`week`);
   }
-  console.log(labels);
+
   async function getPrevMonth(prevWeek, catalog) {
     const snapshot = await firebase
       .database()
@@ -105,7 +105,7 @@ function SalesBarChart(props) {
           });
       });
   }, [props]);
-  console.log(dataset);
+
   const ref = useRef();
   const data = {
     labels,

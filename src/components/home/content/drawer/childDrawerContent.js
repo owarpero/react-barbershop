@@ -6,8 +6,9 @@ import "antd/dist/antd.css";
 import { Typography } from "antd";
 import moment from "moment";
 import TextArea from "antd/lib/input/TextArea";
+import { connect } from "react-redux";
 const { Title } = Typography;
-export class ChildDrawerContent extends React.Component {
+class ChildDrawerContent extends React.Component {
   constructor(props) {
     super(props);
     this.rules = [
@@ -40,16 +41,18 @@ export class ChildDrawerContent extends React.Component {
 
   onFinish = fieldsValue => {
     const prevState = this.props.state;
+
     const values = {
       ...fieldsValue,
       birthday:
-        fieldsValue["birthday"] !== undefined
-          ? fieldsValue["birthday"].format()
+        fieldsValue["birthday"] !== undefined &&
+        fieldsValue["birthday"] !== null
+          ? fieldsValue["birthday"].format("YYYY/MM/DD")
           : prevState.birthday === undefined
           ? ""
           : prevState.birthday
     };
-    console.log(fieldsValue);
+
     for (const key in values) {
       const element = values[key];
       element !== undefined
@@ -72,7 +75,6 @@ export class ChildDrawerContent extends React.Component {
 
   // }
   render() {
-    console.log(this.props.state);
     const {
       name,
       birthday,
@@ -85,7 +87,7 @@ export class ChildDrawerContent extends React.Component {
       twitter,
       google
     } = this.props.state;
-    console.log(about);
+
     return (
       <Form layout="vertical" hideRequiredMark onFinish={this.onFinish}>
         <Title level={3}>User information</Title>
@@ -99,7 +101,11 @@ export class ChildDrawerContent extends React.Component {
           <Col span={12}>
             <Form.Item name="birthday" label="Birthday">
               <DatePicker
-                defaultValue={moment(birthday, " YYYY/MM/DD")}
+                defaultValue={
+                  birthday !== undefined && birthday !== null && birthday !== ""
+                    ? moment(birthday, "YYYY/MM/DD")
+                    : moment(this.props.date.fullDate, "YYYY/MM/DD")
+                }
                 format={"YYYY/MM/DD"}
                 style={{ width: "100%" }}
                 getPopupContainer={trigger => trigger.parentNode}
@@ -216,3 +222,10 @@ export class ChildDrawerContent extends React.Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    date: state.homeReducer.twoWeeks[4]
+  };
+};
+const WrappedComponent = connect(mapStateToProps)(ChildDrawerContent);
+export default WrappedComponent;
